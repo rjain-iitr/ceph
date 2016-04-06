@@ -1590,6 +1590,8 @@ int RGWREST::preprocess(struct req_state *s, RGWClientIO* cio)
 {
   req_info& info = s->info;
 
+  s->info.request_uri_aws4 = s->info.request_uri;
+
   s->cio = cio;
   if (info.host.size()) {
     ldout(s->cct, 10) << "host=" << info.host << dendl;
